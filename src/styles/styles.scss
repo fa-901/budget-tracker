@@ -15,13 +15,20 @@ body,
 body {
     font-family: 'IBM Plex Mono', monospace;
     background-color: $lemon-meringue;
+    color: $prussian-blue;
 }
 
 .text-b {
     color: $prussian-blue;
 }
+.text-r {
+    color: $maximum-red;
+}
 
 .budget {
-    border-radius: 1rem;
+    border-radius: 0.5rem;
     background-color: $orange;
+    @include font-size(2rem);
+    padding: 1rem;
+    color: $prussian-blue;
 }
