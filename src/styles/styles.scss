@@ -16,6 +16,7 @@ body {
     font-family: 'IBM Plex Mono', monospace;
     background-color: $lemon-meringue;
     color: $prussian-blue;
+    @include font-size(1rem);
 }
 
 .text-b {
