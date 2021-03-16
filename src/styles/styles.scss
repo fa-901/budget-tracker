@@ -2,18 +2,18 @@
 @import "../../node_modules/rfs/scss";
 
 html {
-	font-size: 16px;
+    font-size: 16px;
 }
 
 html,
 body,
 #root,
 .app {
-	height: 100%;
+    height: 100%;
 }
 
 body {
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: "IBM Plex Mono", monospace;
     background-color: $lemon-meringue;
     color: $prussian-blue;
     @include font-size(1rem);
@@ -29,7 +29,52 @@ body {
 .budget {
     border-radius: 0.5rem;
     background-color: $orange;
-    @include font-size(2rem);
+    @include font-size(1.8rem);
     padding: 1rem;
     color: $prussian-blue;
 }
+
+.txt-input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-bottom: $prussian-blue 1px solid;
+    color: $prussian-blue;
+    background-color: $lemon-meringue;
+}
+
+.txt-input:focus {
+    border: none;
+    background-color: darken($lemon-meringue, 5%);
+    outline: none;
+    border-bottom: $prussian-blue 1px solid;
+}
+
+button {
+    display: inline-block;
+    background-color: $prussian-blue;
+    font-weight: bold;
+    line-height: 1.5;
+    color: $orange;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: 0rem 0.5rem;
+    font-size: 1.2rem;
+    border-radius: 0.2rem;
+
+    &:focus {
+        outline: none;
+        box-shadow: none;
+    }
+    &:active {
+        box-shadow: 0 0 0 0.1rem lighten(black, 50%);
+    }
+}
+
+
