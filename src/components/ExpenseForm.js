@@ -17,6 +17,8 @@ export default function ExpenseForm(props) {
         const name = nameRef.current.value;
         const value = Number(valueRef.current.value) || 0;
         dispatch(addItem({ name, value }))
+        nameRef.current.value='';
+        valueRef.current.value='';
     }
 
     function handleKeyDown(e) {

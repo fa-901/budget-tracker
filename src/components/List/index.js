@@ -1,5 +1,6 @@
+import { Fragment } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
-import { getList } from './ListReducer';
+import { getList, removeItem } from './ListReducer';
 
 
 export default function ExpenseList(props) {
@@ -11,16 +12,21 @@ export default function ExpenseList(props) {
             <li key={i} className="list-group-item d-flex">
                 <span>{e.name}</span>
                 <span className='ms-auto'>
-                    ${e.value}
-                    <span className='ms-2 fs-6 fas fa-times c-pointer'></span>
+                    <span className='rounded-pill p-1 bg-y'>${e.value}</span>
+                    <span className='ms-2 fs-6 fas fa-times c-pointer' onClick={() => { dispatch(removeItem(i)) }}></span>
                 </span>
             </li>
         )
     });
 
     return (
-        <ul className='list-group'>
-            {display}
-        </ul>
+        <Fragment>
+            <h2>
+                Expense List
+            </h2>
+            <ul className='list-group'>
+                {display}
+            </ul>
+        </Fragment>
     )
 }
