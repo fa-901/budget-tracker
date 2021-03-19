@@ -1,11 +1,16 @@
-import { Fragment } from 'react';
+import { Fragment, useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import { getList, removeItem } from './ListReducer';
 
 
 export default function ExpenseList(props) {
+    const [inp, setInp] = useState('');
     const dispatch = useDispatch();
     const list = useSelector(getList);
+
+    function search(e) {
+        setInp(e.currentTarget.value);
+    }
 
     let display = list.map((e, i) => {
         return (
@@ -30,6 +35,15 @@ export default function ExpenseList(props) {
             <h2>
                 Expense List
             </h2>
+            <div className='mb-3'>
+                <input
+                    className='txt-input'
+                    placeholder='Search...'
+                    type="text"
+                    onChange={search}
+                    value={inp}
+                />
+            </div>
             <ul className='list-group'>
                 {display}
             </ul>
