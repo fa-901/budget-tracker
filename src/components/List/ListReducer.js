@@ -5,10 +5,11 @@ export const listSlice = createSlice({
     initialState: [],
     reducers: {
         addItem: (state, action) => {
-            state.push(action.payload);
+            let key = new Date().toISOString();
+            state.push({ ...action.payload, key });
         },
         removeItem: (state, action) => {
-            return state.filter((e, i) => { return i !== action.payload });
+            return state.filter((e, i) => { return e.key !== action.payload });
         },
     },
 });
