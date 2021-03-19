@@ -1,9 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
-import { useSelector, useDispatch } from 'react-redux'
-import {
-    addItem,
-    getList,
-} from './List/ListReducer';
+import { useDispatch } from 'react-redux'
+import { addItem } from './List/ListReducer';
 
 
 export default function ExpenseForm(props) {
