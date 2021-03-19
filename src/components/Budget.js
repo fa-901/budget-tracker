@@ -1,14 +1,14 @@
 import { useState, useEffect, useRef } from 'react';
 import {
     setAmount,
-    selectCount,
+    getBudget,
 } from './BudgetReducer';
 
 import { useSelector, useDispatch } from 'react-redux'
 
 
 export default function Budget(props) {
-    const value = useSelector(selectCount);
+    const value = useSelector(getBudget);
     const dispatch = useDispatch();
     const [isEdit, switchEdit] = useState(false);
     const [input, handleInput] = useState(value);
