@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import {
     setAmount,
     selectCount,
@@ -14,12 +14,28 @@ export default function Budget(props) {
     const [input, handleInput] = useState(value);
     const inputRef = useRef(null);
 
+    useEffect(() => {
+        if (isEdit) {
+            inputRef.current.focus();
+        }
+        else{
+            dispatch(setAmount(Number(input) || 0))
+        }
+    }, [isEdit])
+
     function toggleEdit() {
         switchEdit(p => !p);
     }
 
+    function handleKeyDown(e) {
+        if (e.key !== 'Enter') {
+            return;
+        }
+        toggleEdit();
+    }
+
     var display = isEdit ? (
-        <input type='number' className='num-input' value={input} onChange={(e) => { handleInput(e.currentTarget.value) }} onBlur={toggleEdit} ref={inputRef} />
+        <input type='number' className='num-input' value={input} onChange={(e) => { handleInput(e.currentTarget.value) }} onKeyDown={handleKeyDown} ref={inputRef} />
     ) : `Budget: $${value}`;
 
     return (
