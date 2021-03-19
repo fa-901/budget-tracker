@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 export const budgetSlice = createSlice({
     name: 'budget',
     initialState: {
-        value: 0,
+        value: 100,
     },
     reducers: {
         setAmount: (state, action) => {

@@ -1,6 +1,7 @@
 import './styles/styles.scss';
 import Budget from './components/Budget';
 import ExpenseForm from './components/ExpenseForm';
+import Remainder from './components/Remainder';
 import List from './components/List';
 
 function App() {
@@ -9,16 +10,11 @@ function App() {
 			<h1 className='text-center form-group'>
 				Budget Planner
 			</h1>
-			<div className='row my-4 gx-3'>
+			<div className='row my-4 g-3'>
 				<div className='col-md-4'>
 					<Budget />
 				</div>
-				<div className='col-md-4'>
-					{/* <Budget /> */}
-				</div>
-				<div className='col-md-4'>
-					{/* <Budget /> */}
-				</div>
+				<Remainder />
 			</div>
 			<ExpenseForm />
 			<List />

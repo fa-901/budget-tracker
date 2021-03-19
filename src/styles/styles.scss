@@ -1,6 +1,12 @@
 @import "colors";
 @import "../../node_modules/rfs/scss";
 
+@mixin box-d {
+    border-radius: 0.5rem;
+    @include font-size(1.8rem);
+    padding: 1rem;
+}
+
 html {
     font-size: 16px;
 }
@@ -27,11 +33,20 @@ body {
 }
 
 .budget {
-    border-radius: 0.5rem;
+    @include box-d;
     background-color: $orange;
-    @include font-size(1.8rem);
-    padding: 1rem;
     color: $prussian-blue;
+}
+
+.rem {
+    @include box-d;
+    background-color: $prussian-blue;
+    color: $maximum-yellow-red;
+}
+.total {
+    @include box-d;
+    background-color: $maximum-red;
+    color: $lemon-meringue;
 }
 
 .bg-o {
