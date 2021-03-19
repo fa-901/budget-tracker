@@ -1,6 +1,7 @@
-import './styles/styles.scss'; 
+import './styles/styles.scss';
 import Budget from './components/Budget';
 import ExpenseForm from './components/ExpenseForm';
+import List from './components/List';
 
 function App() {
 	return (
@@ -20,6 +21,7 @@ function App() {
 				</div>
 			</div>
 			<ExpenseForm />
+			<List />
 			<div className="text-center mt-auto form-text text-muted">
 				<small>Created by <a className='text-r' href="https://github.com/fa-901" rel='noopener noreferrer' target="_blank">fa-901</a></small>
 			</div>

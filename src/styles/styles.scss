@@ -43,6 +43,11 @@ input[type=text], input[type=number] {
     background-color: transparent;
 }
 
+.list-group-item {
+    background-color: $lemon-meringue;
+    border: $prussian-blue 1px solid;
+}
+
 .txt-input:focus {
     border: none;
     background-color: darken($lemon-meringue, 5%);
@@ -88,4 +93,7 @@ button {
     }
 }
 
+.c-pointer {
+    cursor: pointer;
+}
 
