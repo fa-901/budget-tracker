@@ -21,7 +21,7 @@ export default function Budget(props) {
         else{
             dispatch(setAmount(Number(input) || 0))
         }
-    }, [isEdit])
+    }, [isEdit]) // eslint-disable-line react-hooks/exhaustive-deps
 
     function toggleEdit() {
         switchEdit(p => !p);
