@@ -56,6 +56,10 @@ input[type=text], input[type=number] {
     border: $prussian-blue 1px solid;
 }
 
+.list-group-item:hover {
+    background-color: darken($lemon-meringue, 5%);
+}
+
 .txt-input:focus {
     border: none;
     background-color: darken($lemon-meringue, 5%);

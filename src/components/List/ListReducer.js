@@ -8,8 +8,7 @@ export const listSlice = createSlice({
             state.push(action.payload);
         },
         removeItem: (state, action) => {
-            let a = state.filter((e, i) => { return i !== action.payload });
-            state = a;
+            return state.filter((e, i) => { return i !== action.payload });
         },
     },
 });

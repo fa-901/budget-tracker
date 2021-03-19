@@ -19,10 +19,15 @@ export default function ExpenseForm(props) {
         dispatch(addItem({ name, value }))
         nameRef.current.value='';
         valueRef.current.value='';
+        nameRef.current.blur();
+        valueRef.current.blur();
     }
 
     function handleKeyDown(e) {
         if (e.key !== 'Enter') {
+            return;
+        }
+        if (!nameRef.current.value) {
             return;
         }
         saveFn();

@@ -19,6 +19,12 @@ export default function ExpenseList(props) {
         )
     });
 
+    if (list.length < 1) {
+        display = (
+            <div className="text-center hint">You have no items in your list</div>
+        )
+    }
+
     return (
         <Fragment>
             <h2>
