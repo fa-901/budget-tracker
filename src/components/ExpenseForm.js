@@ -1,4 +1,9 @@
 export default function ExpenseForm(props) {
+
+    function saveFn() {
+
+    }
+
     return (
         <div className='mb-4'>
             <h2 className=''>
@@ -11,10 +16,11 @@ export default function ExpenseForm(props) {
                 <div className='flex-fill mx-2'>
                     <input className='txt-input' placeholder='Cost' type="text" />
                 </div>
-                <button className=''>
+                <button className='' onClick={saveFn}>
                     <i className="far fa-save"></i>
                 </button>
             </div>
+            <div className="text-center hint">Press 'Enter' to save. Or use the button</div>
         </div>
     )
 }
